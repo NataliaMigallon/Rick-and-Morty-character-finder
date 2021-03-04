@@ -1,0 +1,20 @@
+.char__card {
+  width: 250px;
+  height: 350px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 30px;
+  border-radius: 50px;
+  background-color: red;
+
+  &--img {
+    width: 200px;
+    border-radius: 20px;
+  }
+
+  &--name {
+    text-align: center;
+  }
+}

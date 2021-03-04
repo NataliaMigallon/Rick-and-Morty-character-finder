@@ -3,12 +3,12 @@ import { Route, Switch } from "react-router-dom";
 import Header from "./Header";
 import getDataFromApi from "../services/Api";
 import CharacterList from "./CharacterList";
+import CharacterDetail from "./CharacterDetail";
 import Filters from "./Filters";
-
-console.log(getDataFromApi());
 
 const App = () => {
   const [characters, setCharacters] = useState([]);
+  const [nameFilter, setNameFilter] = useState("");
 
   useEffect(() => {
     getDataFromApi().then((data) => {
@@ -17,14 +17,34 @@ const App = () => {
   }, []); // con el array vacío solo se hace una llamada y evitamos un bucle
 
   const handleFilter = (data) => {
-    console.log("Manejando los eventos", data);
+    if (data.key === "name") {
+      setNameFilter(data.value);
+    }
+  };
+
+  const filteredCharacters = characters.filter((character) => {
+    return character.name.toLowerCase().includes(nameFilter.toLowerCase());
+  });
+
+  const renderCharacterDetail = (props) => {
+    //console.log(props.match.params.characterId, characters);
+    const characterId = props.match.params.characterId;
+    const foundCharacter = characters.find((character) => {
+      return character.id === parseInt(characterId);
+    });
+    return <CharacterDetail character={foundCharacter} />;
   };
 
   return (
-    <div className="App">
+    <div>
       <Header />
-      <CharacterList characters={characters} />
-      <Filters handleFilter={handleFilter} />
+      <Switch>
+        <Route exact path="/">
+          <Filters handleFilter={handleFilter} name={nameFilter} />
+          <CharacterList characters={filteredCharacters} />
+        </Route>
+        <Route path="/character/:characterId" render={renderCharacterDetail} />
+      </Switch>
     </div>
   );
 };

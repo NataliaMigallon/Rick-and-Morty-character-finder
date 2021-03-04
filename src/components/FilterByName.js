@@ -3,8 +3,11 @@ import React from "react";
 const FilterByName = (props) => {
   //console.log(props);
   const handleChange = (ev) => {
-    props.handleFilter(ev.target.value);
-    //console.log(ev.target.value);
+    props.handleFilter({
+      value: ev.target.value,
+      key: "name",
+      //console.log(ev.target.value);
+    });
   };
   return (
     <label>
@@ -13,7 +16,7 @@ const FilterByName = (props) => {
         type="text"
         name="name"
         id="name"
-        value={props.name} //no sé si esto es correcto pero funciona
+        value={props.name}
         placeholder="Escribe el nombre del personaje"
         onChange={handleChange}
       />

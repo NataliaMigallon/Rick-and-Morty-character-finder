@@ -1,0 +1,20 @@
+.char__results {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 50px 0 50px;
+
+  &--list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    @media all and (min-width: 768px) {
+      grid-template-columns: 1fr 1fr 1fr;
+      //grid-template-rows: repeat(auto, 1fr);
+    }
+    // @media all and (min-width: 1200px) {
+    //grid-template-columns: 1fr 1fr 1fr 1fr;
+    //grid-template-rows: repeat(auto, 1fr);
+    // }
+  }
+}

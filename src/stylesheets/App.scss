@@ -1,10 +1,3 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-.App {
-  text-align: center;
-}
-
-//@import "layout/characterCard";
+@import "core/reset";
+@import "layout/characterList";
+@import "layout/characterCard";
