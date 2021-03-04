@@ -1,6 +1,8 @@
-# Getting Started with Create React App
+![image](https://user-images.githubusercontent.com/75789190/110043181-4349eb80-7d47-11eb-94d4-6ceb3288fbb2.png)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Buscador de personajes de Rick and Morty
+
+Puedes visitar este proyecto en 
 
 ## Available Scripts
 
