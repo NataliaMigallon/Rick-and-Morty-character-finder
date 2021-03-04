@@ -1,0 +1,86 @@
+.filter__section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.wrapper__filterName {
+  &--title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    font-family: "Ranchers", cursive;
+    font-size: 30px;
+    color: #1dbee2;
+    @media all and (min-width: 768px) {
+      // padding: 40px;
+      // margin-bottom: 30%;
+      font-size: 40px;
+    }
+    @media all and (min-width: 1200px) {
+      // margin-bottom: 20%;
+      font-size: 40px;
+    }
+  }
+  &--input {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 250px;
+    height: 30px;
+    padding: 10px;
+    margin: 15px 0 20px 0;
+    border: 2px solid #6de21d;
+    background-color: black;
+    font-family: "Roboto", sans-serif;
+    color: white;
+    @media all and (min-width: 768px) {
+      // padding: 40px;
+      // margin-bottom: 30%;
+      width: 350px;
+      height: 30px;
+    }
+    @media all and (min-width: 1200px) {
+      // margin-bottom: 20%;
+    }
+  }
+}
+.wrapper__filterSpecies {
+  align-items: center;
+  &--title {
+    text-transform: uppercase;
+    font-family: "Ranchers", cursive;
+    font-size: 27px;
+    color: #1dbee2;
+    padding-left: 15px;
+    @media all and (min-width: 768px) {
+      // padding: 40px;
+      // margin-bottom: 30%;
+      font-size: 30px;
+    }
+    @media all and (min-width: 1200px) {
+      // margin-bottom: 20%;
+    }
+  }
+  &--select {
+    width: 80px;
+    height: 25px;
+    //padding-top: 10px;
+    margin-left: 10px;
+    border: 2px solid #6de21d;
+    //background-color: black;
+    font-family: "Roboto", sans-serif;
+    @media all and (min-width: 768px) {
+      // padding: 40px;
+      // margin-bottom: 30%;
+      width: 100px;
+      height: 30px;
+    }
+    @media all and (min-width: 1200px) {
+      // margin-bottom: 20%;
+    }
+  }
+}

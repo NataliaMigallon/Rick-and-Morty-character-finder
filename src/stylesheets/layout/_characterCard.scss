@@ -1,20 +1,64 @@
 .char__card {
-  width: 250px;
-  height: 350px;
+  width: 200px;
+  height: 300px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   margin: 30px;
-  border-radius: 50px;
-  background-color: red;
+  border-radius: 20px;
+  background-color: white;
+  border: #6de21d solid 5px;
+  @media all and (min-width: 768px) {
+    //     padding: 40px;
+    //     margin-bottom: 30%;
+    width: 250px;
+    height: 350px;
+  }
+  //   @media all and (min-width: 1200px) {
+  //     margin-bottom: 20%;
+  //   }
 
   &--img {
-    width: 200px;
+    width: 150px;
     border-radius: 20px;
+    margin-bottom: 50px;
+    @media all and (min-width: 768px) {
+      //     padding: 40px;
+      //     margin-bottom: 30%;
+      width: 200px;
+    }
+    //   @media all and (min-width: 1200px) {
+    //     margin-bottom: 20%;
+    //   }
   }
 
   &--name {
+    font-family: "Ranchers", cursive;
+    font-size: 20px;
+    color: black;
     text-align: center;
+    //   @media all and (min-width: 768px) {
+    //     padding: 40px;
+    //     margin-bottom: 30%;
+    //   }
+    //   @media all and (min-width: 1200px) {
+    //     margin-bottom: 20%;
+    //   }
+  }
+  &--species {
+    font-family: "Roboto", sans-serif;
+  }
+  &--info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: "Roboto", sans-serif;
+    color: white;
+    background-color: #1dbee2;
+    border-radius: 7px;
+    width: 80px;
+    height: 30px;
   }
 }

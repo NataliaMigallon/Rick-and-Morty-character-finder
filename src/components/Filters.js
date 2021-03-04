@@ -1,15 +1,14 @@
 import React from "react";
 import FilterByName from "./FilterByName";
+import FilterBySpecies from "./FilterBySpecies";
 
 const Filters = (props) => {
   const preventDefault = (ev) => ev.preventDefault();
   return (
-    <section>
-      <form onSubmit={preventDefault}>
+    <section className="filter__section">
+      <form onSubmit={preventDefault} className="filter__section--form">
         <FilterByName handleFilter={props.handleFilter} name={props.name} />
-        <button className="form__reset" onClick={props.handleClick}>
-          <i className="form__reset--icon far fa-trash-alt"></i>Reset
-        </button>
+        <FilterBySpecies handleFilter={props.handleFilter} />
       </form>
     </section>
   );

@@ -17,17 +17,13 @@ const CharacterList = (props) => {
     );
   });
 
-  // const searchResults =
-  //   props.character.length !== 0 ? (
-  //     <ul>{characterElements}</ul>
-  //   ) : (
-  //     <p>No hay ninguna coincidencia</p>
-  //   );
-
-  return (
-    <section className="char__results">
+  const searchResults =
+    props.characters.length !== 0 ? (
       <ul className="char__results--list">{characterElements}</ul>
-    </section>
-  );
+    ) : (
+      <p>El personaje que buscas no existe</p>
+    );
+
+  return <section className="char__results">{searchResults}</section>;
 };
 export default CharacterList;

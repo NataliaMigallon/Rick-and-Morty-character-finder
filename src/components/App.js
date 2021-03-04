@@ -5,10 +5,12 @@ import getDataFromApi from "../services/Api";
 import CharacterList from "./CharacterList";
 import CharacterDetail from "./CharacterDetail";
 import Filters from "./Filters";
+import "../stylesheets/App.scss";
 
 const App = () => {
   const [characters, setCharacters] = useState([]);
   const [nameFilter, setNameFilter] = useState("");
+  const [speciesFilter, setSpeciesFilter] = useState("All");
 
   useEffect(() => {
     getDataFromApi().then((data) => {
@@ -19,12 +21,27 @@ const App = () => {
   const handleFilter = (data) => {
     if (data.key === "name") {
       setNameFilter(data.value);
+    } else if (data.key === "species") {
+      setSpeciesFilter(data.value);
     }
   };
 
-  const filteredCharacters = characters.filter((character) => {
-    return character.name.toLowerCase().includes(nameFilter.toLowerCase());
-  });
+  const filteredCharacters = characters
+    .filter((character) => {
+      return character.name.toLowerCase().includes(nameFilter.toLowerCase());
+    })
+    .filter((character) => {
+      // if (speciesFilter === "all") {
+      //   return true;
+      // } else {
+      //   console.log("holis");
+      //   return character.species === speciesFilter;
+
+      // }
+      return speciesFilter === "All"
+        ? true
+        : character.species === speciesFilter;
+    });
 
   const renderCharacterDetail = (props) => {
     //console.log(props.match.params.characterId, characters);
@@ -36,7 +53,7 @@ const App = () => {
   };
 
   return (
-    <div>
+    <div className="App">
       <Header />
       <Switch>
         <Route exact path="/">

@@ -1,26 +1,27 @@
 import React from "react";
 
 const FilterByName = (props) => {
-  //console.log(props);
   const handleChange = (ev) => {
     props.handleFilter({
       value: ev.target.value,
       key: "name",
-      //console.log(ev.target.value);
     });
   };
   return (
-    <label>
-      Buscar al personaje:
-      <input
-        type="text"
-        name="name"
-        id="name"
-        value={props.name}
-        placeholder="Escribe el nombre del personaje"
-        onChange={handleChange}
-      />
-    </label>
+    <div className="wrapper__filterName">
+      <label className="wrapper__filterName--title">
+        Search the character:
+        <input
+          type="text"
+          name="name"
+          id="name"
+          className="wrapper__filterName--input"
+          value={props.name}
+          placeholder="ex. 'Morty...'"
+          onChange={handleChange}
+        />
+      </label>
+    </div>
   );
 };
 export default FilterByName;
