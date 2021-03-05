@@ -6,6 +6,7 @@ import CharacterList from "./CharacterList";
 import CharacterDetail from "./CharacterDetail";
 import Filters from "./Filters";
 import "../stylesheets/App.scss";
+import Footer from "./Footer";
 
 const App = () => {
   const [characters, setCharacters] = useState([]);
@@ -52,16 +53,27 @@ const App = () => {
     return <CharacterDetail character={foundCharacter} />;
   };
 
+  const handleReset = () => {
+    setNameFilter("");
+    setSpeciesFilter("All");
+  };
+
   return (
     <div className="App">
       <Header />
       <Switch>
         <Route exact path="/">
-          <Filters handleFilter={handleFilter} name={nameFilter} />
-          <CharacterList characters={filteredCharacters} />
+          <Filters
+            handleFilter={handleFilter}
+            name={nameFilter}
+            handleReset={handleReset}
+            value={speciesFilter}
+          />
+          <CharacterList characters={filteredCharacters} name={nameFilter} />
         </Route>
         <Route path="/character/:characterId" render={renderCharacterDetail} />
       </Switch>
+      <Footer />
     </div>
   );
 };

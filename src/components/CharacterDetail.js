@@ -12,40 +12,67 @@ const CharacterDetail = (props) => {
     }
   };
   if (props.character === undefined) {
-    return <h1>Personaje no encontrado</h1>;
+    return (
+      <div className="not-found">
+        <p className="not-found__text">Character not found</p>
+        <img
+          src="https://media.giphy.com/media/afqT2ykIlYcVi/giphy.gif"
+          className="not-found__gif"
+        ></img>
+      </div>
+    );
   } else {
     return (
-      <section className="detail__section1">
-        <header className="detail__section1--header">
-          <Link to="/">
-            <span className="detail__section1--return">Return</span>
-          </Link>
-          <h2 className="detail__section1--title">{props.character.name}</h2>
-        </header>
-        <main>
-          <div className="detail__section2">
-            <img
-              className="detail__section2--img"
-              src={props.character.image}
-              alt={props.character.image}
-            ></img>
-            <ul className="detail__section2--list">
-              <li className="detail__section2--item">
-                Species: {props.character.species}
-              </li>
-              <li className="detail__section2--item">
-                Planet: {props.character.origin}
-              </li>
-              <li className="detail__section2--item">
-                Episodes: {props.character.episode.length}
-              </li>
-              <li className="detail__section2--item">
-                Status: {renderIconStatus()}
-              </li>
-            </ul>
-          </div>
-        </main>
-      </section>
+      <div className="detail">
+        <section className="detail__section1">
+          <header className="detail__section1--header">
+            <Link to="/">
+              <button className="detail__section1--header-return">
+                Return
+              </button>
+            </Link>
+            <h2 className="detail__section1--header-title">
+              {props.character.name}
+            </h2>
+          </header>
+          <main>
+            <div className="detail__section2">
+              <img
+                className="detail__section2--img"
+                src={props.character.image}
+                alt={`Picture of ${props.character.name}`}
+                title={`Picture of ${props.character.name}`}
+              ></img>
+              <ul className="detail__section2--list">
+                <li className="detail__section2--item">
+                  <p className="detail__section2--item1">Species:</p>
+                  <p className="detail__section2--item2">
+                    {props.character.species}
+                  </p>
+                </li>
+                <li className="detail__section2--item">
+                  <p className="detail__section2--item1">Planet:</p>
+                  <p className="detail__section2--item2">
+                    {props.character.origin}
+                  </p>
+                </li>
+                <li className="detail__section2--item">
+                  <p className="detail__section2--item1">Episodes:</p>
+                  <p className="detail__section2--item2">
+                    {props.character.episode.length}
+                  </p>
+                </li>
+                <li className="detail__section2--item">
+                  <p className="detail__section2--item1">Status:</p>
+                  <p className="detail__section2--item2">
+                    {renderIconStatus()}
+                  </p>
+                </li>
+              </ul>
+            </div>
+          </main>
+        </section>
+      </div>
     );
   }
 };

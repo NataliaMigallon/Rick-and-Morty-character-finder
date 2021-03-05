@@ -1,12 +1,15 @@
 @import "core/reset";
 @import "layout/header";
 @import "layout/filters";
+@import "layout/reset";
 @import "layout/characterList";
 @import "layout/characterCard";
 @import "layout/characterDetail";
+@import "layout/footer";
 
 .App {
   width: 100vw;
   height: 100%;
+  min-height: 100vh;
   background-color: black;
 }

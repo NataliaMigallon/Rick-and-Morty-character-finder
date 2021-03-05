@@ -1,6 +1,8 @@
 import React from "react";
 import FilterByName from "./FilterByName";
 import FilterBySpecies from "./FilterBySpecies";
+import Reset from "./Reset";
+import PropTypes from "prop-types";
 
 const Filters = (props) => {
   const preventDefault = (ev) => ev.preventDefault();
@@ -8,9 +10,19 @@ const Filters = (props) => {
     <section className="filter__section">
       <form onSubmit={preventDefault} className="filter__section--form">
         <FilterByName handleFilter={props.handleFilter} name={props.name} />
-        <FilterBySpecies handleFilter={props.handleFilter} />
+        <div className="wrapper_filter_reset">
+          <FilterBySpecies
+            handleFilter={props.handleFilter}
+            value={props.value}
+          />
+          <Reset handleReset={props.handleReset} />
+        </div>
       </form>
     </section>
   );
+};
+Filters.propTypes = {
+  handleFilter: PropTypes.func.isRequired,
+  name: PropTypes.string.isRequired,
 };
 export default Filters;

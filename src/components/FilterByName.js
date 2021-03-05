@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 const FilterByName = (props) => {
   const handleChange = (ev) => {
@@ -23,5 +24,8 @@ const FilterByName = (props) => {
       </label>
     </div>
   );
+};
+FilterByName.propTypes = {
+  handleFilter: PropTypes.func.isRequired,
 };
 export default FilterByName;

@@ -1,19 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
+//import PropTypes from "prop-types";
 
 const CharacterCard = (props) => {
-  // const getSpecies = () => {
-  //   if (props.character.species === 'human') {
-  //     return 'Human';
-  //   } else if (props.character.species === 'alien') {
-  //     return 'Alien';
-  //   }
   return (
     <article className="char__card">
       <img
         src={props.character.image}
-        alt={`Foto de ${props.character.name}`}
-        title={`Foto de ${props.character.name}`}
+        alt={`Picture of ${props.character.name}`}
+        title={`Picture of ${props.character.name}`}
         className="char__card--img"
       />
       <h4 className="char__card--name">{props.character.name}</h4>
@@ -23,9 +18,12 @@ const CharacterCard = (props) => {
         className="char__card--info"
         to={`/character/${props.character.id}`}
       >
-        More Info
+        About
       </Link>
     </article>
   );
 };
+// CharacterCard.propTypes = { Me da warning en consola
+//   character: PropTypes.element.isRequired, //tengo dudas de si sería un object
+// };
 export default CharacterCard;

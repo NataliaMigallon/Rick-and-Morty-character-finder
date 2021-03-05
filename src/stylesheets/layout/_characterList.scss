@@ -1,5 +1,6 @@
 .char__results {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   margin: 0 50px 0 50px;
@@ -16,5 +17,28 @@
       grid-template-columns: 1fr 1fr 1fr 1fr;
       //grid-template-rows: repeat(auto, 1fr);
     }
+  }
+}
+.no-matches {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  &__text {
+    margin: 40px 0 60px 0;
+    font-family: "Roboto", sans-serif;
+    font-size: 18px;
+    //text-transform: uppercase;
+    color: white;
+    @media all and (min-width: 768px) {
+      font-size: 25px;
+    }
+    @media all and (min-width: 1200px) {
+      font-size: 30px;
+    }
+  }
+  &__gif {
+    border-radius: 5px;
+    margin-bottom: 50px;
   }
 }

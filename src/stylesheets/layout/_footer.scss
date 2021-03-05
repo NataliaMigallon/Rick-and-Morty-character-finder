@@ -1,0 +1,28 @@
+.footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border-top: #6de21d solid 2px;
+  padding: 15px 15px;
+  &__small {
+    font-family: "Roboto", sans-serif;
+    color: white;
+    margin-right: 10px;
+  }
+  &__line {
+    font-family: "Roboto", sans-serif;
+    font-size: 13px;
+    color: white;
+    margin-right: 10px;
+  }
+  &__github {
+    font-family: "Roboto", sans-serif;
+    font-size: 13px;
+    color: white;
+    margin-right: 10px;
+  }
+}
+.github {
+  color: #1dbee2;
+}

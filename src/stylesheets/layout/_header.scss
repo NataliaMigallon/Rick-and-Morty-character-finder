@@ -1,22 +1,17 @@
 .header {
   padding: 40px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   &__wrapper {
+    display: flex;
     justify-content: center;
     align-items: center;
     &--logo {
-      width: 70%;
-      align-items: center;
+      width: 60%;
+      @media all and (min-width: 768px) {
+        width: 60%;
+      }
+      @media all and (min-width: 1200px) {
+        width: 60%;
+      }
     }
   }
-  //   @media all and (min-width: 768px) {
-  //     padding: 40px;
-  //     margin-bottom: 30%;
-  //   }
-  //   @media all and (min-width: 1200px) {
-  //     margin-bottom: 20%;
-  //   }
 }
