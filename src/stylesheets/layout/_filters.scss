@@ -1,42 +1,29 @@
 .filter__section {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  @include flexColumn();
   margin-bottom: 40px;
 }
 .wrapper__filterName {
   &--title {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    @include flexColumn();
     text-transform: uppercase;
-    font-family: "Ranchers", cursive;
+    font-family: $fontRanchers;
     font-size: 30px;
-    color: #1dbee2;
+    color: $blueBaby;
     @media all and (min-width: 768px) {
-      // padding: 40px;
-      // margin-bottom: 30%;
       font-size: 40px;
     }
     @media all and (min-width: 1200px) {
-      // margin-bottom: 20%;
       font-size: 40px;
     }
   }
   &--input {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
     width: 250px;
     height: 30px;
     padding: 10px;
     margin: 15px 0 20px 0;
-    border: 2px solid #6de21d;
-    background-color: black;
-    font-family: "Roboto", sans-serif;
+    border: 2px solid $greenRadioactive;
+    background-color: $black;
+    font-family: $fontRoboto;
     color: white;
     @media all and (min-width: 768px) {
       width: 350px;
@@ -44,19 +31,16 @@
     }
   }
   &--input::placeholder {
-    color: white;
+    color: $white;
   }
 }
 .wrapper__filterSpecies {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
+  @include flexRow();
   &--title {
     text-transform: uppercase;
-    font-family: "Ranchers", cursive;
+    font-family: $fontRanchers;
     font-size: 27px;
-    color: #1dbee2;
+    color: $blueBaby;
     padding-left: 30px;
     margin-bottom: -8px;
     @media all and (min-width: 768px) {
@@ -68,22 +52,17 @@
     height: 25px;
     margin-top: 10px;
     margin-left: 10px;
-    border: 2px solid #6de21d;
-    background: black;
-    font-family: "Roboto", sans-serif;
+    border: 2px solid $greenRadioactive;
+    background: $black;
+    font-family: $fontRoboto;
     color: white;
     padding-left: 3px;
     @media all and (min-width: 768px) {
       width: 100px;
       height: 30px;
     }
-    @media all and (min-width: 1200px) {
-      // margin-bottom: 20%;
-    }
   }
 }
 .wrapper_filter_reset {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
+  @include flexRow();
 }

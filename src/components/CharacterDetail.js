@@ -14,6 +14,9 @@ const CharacterDetail = (props) => {
   if (props.character === undefined) {
     return (
       <div className="not-found">
+        <Link to="/">
+          <button className="detail__section1--header-return">Return</button>
+        </Link>
         <p className="not-found__text">Character not found</p>
         <img
           src="https://media.giphy.com/media/afqT2ykIlYcVi/giphy.gif"

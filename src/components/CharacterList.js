@@ -32,7 +32,7 @@ const CharacterList = (props) => {
       <ul className="char__results--list">{characterElements}</ul>
     ) : (
       <div className="no-matches">
-        <p className="no-matches__text">{`There is not a character that matches "${props.name}"`}</p>
+        <p className="no-matches__text">{`There is not a character that matches with "${props.name}"`}</p>
         <img
           className="no-matches__gif"
           src="https://media.giphy.com/media/3o85xuO1siCT147FrG/giphy.gif"

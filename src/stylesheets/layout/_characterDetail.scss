@@ -1,19 +1,13 @@
 .detail {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin: 40px 0 180px 0;
+  @include flexColumn();
+  margin: 40px 0 100px 0;
   &__section1 {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: #1dbee2;
+    @include flexColumn();
+    background-color: $blueBaby;
     width: 300px;
     height: 500px;
     border-radius: 20px;
-    border: solid white 8px;
+    border: solid $white 8px;
     @media all and (min-width: 768px) {
       width: 400px;
       height: 600px;
@@ -23,30 +17,28 @@
       height: 700px;
     }
     &--header {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
+      @include flexColumn();
     }
     &--header-return {
       border-style: none;
       outline: none;
-      background: #6de21d;
+      background: $greenRadioactive;
       width: 70px;
       height: 30px;
-      font-family: "Roboto", sans-serif;
+      font-family: $fontRoboto;
       font-size: 18px;
-      color: white;
+      color: $white;
       border-radius: 3px;
       margin-bottom: 10px;
       &:hover {
-        transform: scale(1.07);
+        transform: scale(1.09);
       }
     }
     &--header-title {
-      font-family: "Ranchers", cursive;
+      font-family: $fontRanchers;
       font-size: 20px;
-      color: black;
+      color: $black;
+      letter-spacing: 0.4px;
       margin-bottom: 10px;
       @media all and (min-width: 768px) {
         font-size: 30px;
@@ -57,10 +49,7 @@
     }
   }
   &__section2 {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    @include flexColumn();
     &--img {
       width: 200px;
       border-radius: 15px;
@@ -75,41 +64,39 @@
     &--item {
       display: flex;
       flex-direction: row;
-      font-family: "Roboto", sans-serif;
-      color: white;
+      font-family: $fontRoboto;
+      color: $white;
       padding: 7px;
     }
     &--item1 {
-      color: white;
+      color: $white;
       padding-right: 7px;
     }
     &--item1 {
-      color: black;
+      color: $black;
       text-transform: uppercase;
       font-weight: 800;
     }
   }
 }
 .not-found {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin: 40px 0 50px 0;
+  @include flexColumn();
+  margin: 20px 0 50px 0;
   &__text {
-    font-family: "Ranchers", cursive;
+    font-family: $fontRanchers;
     font-size: 27px;
-    color: white;
+    color: $white;
     text-transform: uppercase;
     @media all and (min-width: 768px) {
       font-size: 40px;
     }
-    @media all and (min-width: 1200px) {
-      font-size: 50px;
-    }
   }
   &__gif {
+    width: 300px;
     border-radius: 5px;
     margin-top: 30px;
+    @media all and (min-width: 768px) {
+      width: 600px;
+    }
   }
 }

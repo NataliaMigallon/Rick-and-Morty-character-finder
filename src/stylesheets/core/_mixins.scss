@@ -1,0 +1,16 @@
+@mixin flexColumn() {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+//@include flexColumn();
+
+@mixin flexRow() {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+//@include flexRow();

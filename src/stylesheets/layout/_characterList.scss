@@ -1,8 +1,5 @@
 .char__results {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  @include flexColumn();
   margin: 0 50px 0 50px;
 
   &--list {
@@ -11,25 +8,20 @@
     grid-template-rows: 1fr 1fr 1fr;
     @media all and (min-width: 768px) {
       grid-template-columns: 1fr 1fr;
-      //grid-template-rows: repeat(auto, 1fr);
     }
     @media all and (min-width: 1200px) {
       grid-template-columns: 1fr 1fr 1fr 1fr;
-      //grid-template-rows: repeat(auto, 1fr);
     }
   }
 }
 .no-matches {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  @include flexColumn();
   &__text {
-    margin: 40px 0 60px 0;
-    font-family: "Roboto", sans-serif;
-    font-size: 18px;
+    margin: 10px 0 60px 0;
+    font-family: $fontRoboto;
+    font-size: 15px;
     //text-transform: uppercase;
-    color: white;
+    color: $white;
     @media all and (min-width: 768px) {
       font-size: 25px;
     }
@@ -38,7 +30,14 @@
     }
   }
   &__gif {
+    width: 300px;
     border-radius: 5px;
-    margin-bottom: 50px;
+    margin-bottom: 40px;
+    @media all and (min-width: 768px) {
+      width: 600px;
+    }
+    @media all and (min-width: 1200px) {
+      width: 700px;
+    }
   }
 }

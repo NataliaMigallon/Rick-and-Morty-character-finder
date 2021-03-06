@@ -1,14 +1,11 @@
 .char__card {
+  @include flexColumn();
   width: 200px;
   height: 300px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   margin: 30px;
   border-radius: 20px;
-  background-color: white;
-  border: #6de21d solid 5px;
+  background-color: $white;
+  border: $greenRadioactive solid 5px;
   @media all and (min-width: 768px) {
     width: 250px;
     height: 350px;
@@ -25,26 +22,24 @@
   }
 
   &--name {
-    font-family: "Ranchers", cursive;
+    font-family: $fontRanchers;
     font-size: 20px;
-    color: black;
+    letter-spacing: 0.4px;
+    color: $black;
     text-align: center;
     margin-bottom: 7px;
     @media all and (min-width: 768px) {
     }
   }
   &--species {
-    font-family: "Roboto", sans-serif;
+    font-family: $fontRoboto;
     margin-bottom: 7px;
   }
   &--info {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    font-family: "Roboto", sans-serif;
-    color: white;
-    background-color: #1dbee2;
+    @include flexColumn();
+    font-family: $fontRoboto;
+    color: $white;
+    background-color: $blueBaby;
     border-radius: 7px;
     width: 80px;
     height: 30px;

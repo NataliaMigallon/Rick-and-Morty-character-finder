@@ -8,10 +8,9 @@ const getDataFromApi = () => {
           name: character.name,
           image: character.image,
           species: character.species,
-          origin: character.origin.name, //cómo se coge la localizacion
+          origin: character.origin.name,
           episode: character.episode,
           status: character.status,
-          //coger más datos
         };
       });
     });
