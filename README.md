@@ -14,7 +14,7 @@ Para ver el proyecto tienes dos opciones: hacer click [aquí](https://beta.adala
   3. Introducir en la terminal "npm install"
   4. Introducir en la terminal "npm start" para poder hacer cambios y verlos a tiempo real
 
-### Características
+## Características
 
 El proyecto está creado a través de un entorno de desarrollo preconfigurado llamado `create-react-app`. En él los diferentes archivos (componentes, archivos de SASS, JSX, imágenes, etc.) se han distribuido en carpetas para una mejor organización a la hora de trabajar. En cuanto a los componentes creados, se han programado siguiendo la sintaxis de los componentes funcionales, poniéndo en práctica todo lo aprendido en este módulo. Por ejemplo a trabajar usando props, escuchar eventos, la técnica de lifting, propTypes, Hooks, formularios, el empleo tanto de ternarios como de if/else, destructuring, React Router, etc.
 
