@@ -54,7 +54,6 @@ const App = () => {
       // } else {
       //   console.log("holis");
       //   return character.species === speciesFilter;
-
       // }
       return speciesFilter === "All"
         ? true
@@ -98,11 +97,11 @@ const App = () => {
         <Route exact path="/">
           <Filters
             handleFilter={handleFilter}
-            name={nameFilter}
             handleReset={handleReset}
+            name={nameFilter}
             value={speciesFilter}
             status={getStatus()}
-            //value={statusFilter}
+            //statusFilter={statusFilter}
           />
           <CharacterList characters={filteredCharacters} name={nameFilter} />
         </Route>

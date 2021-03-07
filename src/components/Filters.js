@@ -22,6 +22,7 @@ const Filters = (props) => {
           <FilterByStatus
             handleFilter={props.handleFilter}
             status={props.status}
+            //statusFilter={props.statusFilter}
           />
         </div>
       </form>

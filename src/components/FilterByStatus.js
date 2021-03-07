@@ -19,6 +19,7 @@ const FilterByStatus = (props) => {
           className="wrapper__filterStatus--input"
           value={statusItem}
           onChange={handleChange}
+          //checked={props.status.includes(statusItem)}
         />
       </label>
     );
