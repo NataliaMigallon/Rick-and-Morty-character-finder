@@ -66,3 +66,31 @@
 .wrapper_filter_reset {
   @include flexRow();
 }
+.wrapper__filterStatus {
+  @include flexRow();
+  margin: 20px 20px 0 0;
+  &--title {
+    text-transform: uppercase;
+    font-family: $fontRanchers;
+    font-size: 27px;
+    color: $blueBaby;
+    padding-left: 30px;
+    margin-bottom: -8px;
+    @media all and (min-width: 768px) {
+      font-size: 30px;
+    }
+  }
+  &--option {
+    text-transform: uppercase;
+    font-family: $fontRoboto;
+    font-size: 13px;
+    color: $white;
+    margin: 10px 0 0 10px;
+    @media all and (min-width: 768px) {
+      font-size: 20px;
+    }
+  }
+  &--input {
+    margin-left: 5px;
+  }
+}

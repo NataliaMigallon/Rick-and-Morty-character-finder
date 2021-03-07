@@ -1,17 +1,18 @@
 import React, { useEffect, useState } from "react";
 import { Route, Switch } from "react-router-dom";
 import Header from "./Header";
+import Footer from "./Footer";
 import getDataFromApi from "../services/Api";
+import Filters from "./Filters";
 import CharacterList from "./CharacterList";
 import CharacterDetail from "./CharacterDetail";
-import Filters from "./Filters";
 import "../stylesheets/App.scss";
-import Footer from "./Footer";
 
 const App = () => {
   const [characters, setCharacters] = useState([]);
   const [nameFilter, setNameFilter] = useState("");
   const [speciesFilter, setSpeciesFilter] = useState("All");
+  const [statusFilter, setStatusFilter] = useState([]);
 
   useEffect(() => {
     getDataFromApi().then((data) => {
@@ -24,6 +25,22 @@ const App = () => {
       setNameFilter(data.value);
     } else if (data.key === "species") {
       setSpeciesFilter(data.value);
+    } else if (data.key === "status") {
+      if (data.checked === true) {
+        const newStatusFilter = [...statusFilter];
+        newStatusFilter.push(data.value);
+        setStatusFilter(newStatusFilter);
+      } else {
+        const newStatusFilter = [...statusFilter];
+        const statusIndex = newStatusFilter.indexOf(data.value);
+        newStatusFilter.splice(statusIndex, 1);
+        setStatusFilter(newStatusFilter);
+        // Otra opción para buscar y meter los status
+        // const newStatusFilter = statusFilter.filter(
+        //   (status) => status !== data.value
+        // );
+        // setStatusFilter(newStatusFilter);
+      }
     }
   };
 
@@ -42,6 +59,14 @@ const App = () => {
       return speciesFilter === "All"
         ? true
         : character.species === speciesFilter;
+    })
+    .filter((character) => {
+      if (statusFilter.length === 0) {
+        return true;
+      } else {
+        return statusFilter.includes(character.status);
+      }
+      //return statusFilter.length === 0 ? true : statusFilter.includes(character.status);
     });
 
   const renderCharacterDetail = (props) => {
@@ -56,6 +81,14 @@ const App = () => {
   const handleReset = () => {
     setNameFilter("");
     setSpeciesFilter("All");
+    setStatusFilter([]);
+  };
+
+  //Para que las opciones no se repitan
+  const getStatus = () => {
+    const statusArray = characters.map((character) => character.status);
+    const status = new Set(statusArray);
+    return Array.from(status);
   };
 
   return (
@@ -68,6 +101,8 @@ const App = () => {
             name={nameFilter}
             handleReset={handleReset}
             value={speciesFilter}
+            status={getStatus()}
+            //value={statusFilter}
           />
           <CharacterList characters={filteredCharacters} name={nameFilter} />
         </Route>

@@ -1,6 +1,7 @@
 import React from "react";
 import FilterByName from "./FilterByName";
 import FilterBySpecies from "./FilterBySpecies";
+import FilterByStatus from "./FilterByStatus";
 import Reset from "./Reset";
 import PropTypes from "prop-types";
 
@@ -16,6 +17,12 @@ const Filters = (props) => {
             value={props.value}
           />
           <Reset handleReset={props.handleReset} />
+        </div>
+        <div>
+          <FilterByStatus
+            handleFilter={props.handleFilter}
+            status={props.status}
+          />
         </div>
       </form>
     </section>
