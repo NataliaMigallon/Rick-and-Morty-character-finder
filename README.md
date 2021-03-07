@@ -1,35 +1,27 @@
 ![image](https://user-images.githubusercontent.com/75789190/110043181-4349eb80-7d47-11eb-94d4-6ceb3288fbb2.png)
 
-# Buscador de personajes de Rick and Morty
+# Buscador de personajes de "Rick and Morty"
 
-Puedes visitar este proyecto en 
+Este proyecto forma parte de la evaluación final del módulo 3 de Adalab.
 
-## Available Scripts
+En él se han aplicado diferentes herramientas de desarrollo web como HTML5, CSS3, SASS, Java Script y React. 
 
-In the project directory, you can run:
+Para ver el proyecto tienes dos opciones: hacer click [aquí](beta.adalab.es/modulo-3-evaluacion-final-nataliamigallon/), o instalarlo en tu ordenador.
 
-### `npm start`
+## Instalación
+  1. Instalar Visual Studio Code
+  2. Clonar este repositorio
+  3. Introducir en la terminal "npm install"
+  4. Introducir en la terminal "npm start" para poder hacer cambios y verlos a tiempo real
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Características
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+La web toma los datos de una [API](https://rickandmortyapi.com/api/character), los cuales son filtrados y renderizados según las decisiones que la usuaria tome mientras navega. 
+Está disponible tanto la búsqueda por nombre del personaje (independientemente de si se efectúa con mayúsculas o minúsculas), como el filtro por especie a la que pertenece a través de una etiqueta de "select" y, además por estado del personaje (vivo, muerto o se desconoce).
 
-### `npm test`
+Para facilitar la experiencia de usuaria la web consta de una serie de botones: `RESET` para borrar todos los datos de la búsqueda; `ABOUT` para ver más detalles sobre el personaje; `RETURN` para volver hacia la página principal después de ver el detalle del personaje.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
 ### `npm run eject`
 
