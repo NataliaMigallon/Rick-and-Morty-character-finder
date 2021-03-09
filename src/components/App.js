@@ -18,7 +18,7 @@ const App = () => {
     getDataFromApi().then((data) => {
       setCharacters(data);
     });
-  }, []); // con el array vacío solo se hace una llamada y evitamos un bucle
+  }, []);
 
   const handleFilter = (data) => {
     if (data.key === "name") {
@@ -35,11 +35,6 @@ const App = () => {
         const statusIndex = newStatusFilter.indexOf(data.value);
         newStatusFilter.splice(statusIndex, 1);
         setStatusFilter(newStatusFilter);
-        // Otra opción para buscar y meter los status
-        // const newStatusFilter = statusFilter.filter(
-        //   (status) => status !== data.value
-        // );
-        // setStatusFilter(newStatusFilter);
       }
     }
   };
@@ -49,12 +44,6 @@ const App = () => {
       return character.name.toLowerCase().includes(nameFilter.toLowerCase());
     })
     .filter((character) => {
-      // if (speciesFilter === "all") {
-      //   return true;
-      // } else {
-      //   console.log("holis");
-      //   return character.species === speciesFilter;
-      // }
       return speciesFilter === "All"
         ? true
         : character.species === speciesFilter;
@@ -65,11 +54,9 @@ const App = () => {
       } else {
         return statusFilter.includes(character.status);
       }
-      //return statusFilter.length === 0 ? true : statusFilter.includes(character.status);
     });
 
   const renderCharacterDetail = (props) => {
-    //console.log(props.match.params.characterId, characters);
     const characterId = props.match.params.characterId;
     const foundCharacter = characters.find((character) => {
       return character.id === parseInt(characterId);
@@ -83,7 +70,6 @@ const App = () => {
     setStatusFilter([]);
   };
 
-  //Para que las opciones no se repitan
   const getStatus = () => {
     const statusArray = characters.map((character) => character.status);
     const status = new Set(statusArray);
@@ -100,8 +86,8 @@ const App = () => {
             handleReset={handleReset}
             name={nameFilter}
             value={speciesFilter}
-            status={getStatus()}
-            //statusFilter={statusFilter}
+            statusFilter={statusFilter}
+            allStatus={getStatus()}
           />
           <CharacterList characters={filteredCharacters} name={nameFilter} />
         </Route>

@@ -2,7 +2,6 @@ import React from "react";
 import PropTypes from "prop-types";
 
 const FilterByName = (props) => {
-  //const preventDefault = (ev) => ev.preventDefault();
   const handleChange = (ev) => {
     props.handleFilter({
       value: ev.target.value,
@@ -21,7 +20,6 @@ const FilterByName = (props) => {
           value={props.name}
           placeholder="ex. 'Morty...'"
           onChange={handleChange}
-          // onSubmit={preventDefault}
         />
       </label>
     </div>

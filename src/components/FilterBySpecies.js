@@ -7,25 +7,23 @@ const FilterBySpecies = (props) => {
       value: ev.target.value,
       key: "species",
     });
-    //console.log("species", ev.target.value);
   };
   return (
     <div className="wrapper__filterSpecies">
       <label htmlFor="species" className="wrapper__filterSpecies--title">
         Species:
-        </label>
-        <select
-          name="species"
-          id="species"
-          className="wrapper__filterSpecies--select"
-          value={props.value}
-          onChange={handleChange}
-        >
-          <option value="All">All</option>
-          <option value="Human">Human</option>
-          <option value="Alien">Alien</option>
-        </select>
-      
+      </label>
+      <select
+        name="species"
+        id="species"
+        className="wrapper__filterSpecies--select"
+        value={props.value}
+        onChange={handleChange}
+      >
+        <option value="All">All</option>
+        <option value="Human">Human</option>
+        <option value="Alien">Alien</option>
+      </select>
     </div>
   );
 };

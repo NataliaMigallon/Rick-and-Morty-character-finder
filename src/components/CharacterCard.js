@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-//import PropTypes from "prop-types";
 
 const CharacterCard = (props) => {
   return (
@@ -23,7 +22,4 @@ const CharacterCard = (props) => {
     </article>
   );
 };
-// CharacterCard.propTypes = { Me da warning en consola
-//   character: PropTypes.element.isRequired, //tengo dudas de si sería un object
-// };
 export default CharacterCard;
