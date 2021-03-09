@@ -1,6 +1,7 @@
 import React from "react";
 
 const FilterByStatus = (props) => {
+  console.log(props);
   const handleChange = (ev) => {
     props.handleFilter({
       value: ev.target.value,
@@ -8,7 +9,7 @@ const FilterByStatus = (props) => {
       checked: ev.target.checked,
     });
   };
-  const statusElements = props.status.map((statusItem, index) => {
+  const statusElements = props.allStatus.map((statusItem, index) => {
     return (
       <label key={index} className="wrapper__filterStatus--option">
         {statusItem}
@@ -19,7 +20,7 @@ const FilterByStatus = (props) => {
           className="wrapper__filterStatus--input"
           value={statusItem}
           onChange={handleChange}
-          //checked={props.status.includes(statusItem)}
+          checked={props.statusFilter.includes(statusItem)}
         />
       </label>
     );

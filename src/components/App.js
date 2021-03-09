@@ -13,6 +13,7 @@ const App = () => {
   const [nameFilter, setNameFilter] = useState("");
   const [speciesFilter, setSpeciesFilter] = useState("All");
   const [statusFilter, setStatusFilter] = useState([]);
+  const [typeFilter, setTypeFilter] = useState("");
 
   useEffect(() => {
     getDataFromApi().then((data) => {
@@ -41,6 +42,8 @@ const App = () => {
         // );
         // setStatusFilter(newStatusFilter);
       }
+    } else if (data.key === "type") {
+      setTypeFilter(data.value);
     }
   };
 
@@ -66,6 +69,9 @@ const App = () => {
         return statusFilter.includes(character.status);
       }
       //return statusFilter.length === 0 ? true : statusFilter.includes(character.status);
+    })
+    .filter((character) => {
+      return character.type.toLowerCase().includes(typeFilter.toLowerCase());
     });
 
   const renderCharacterDetail = (props) => {
@@ -81,11 +87,14 @@ const App = () => {
     setNameFilter("");
     setSpeciesFilter("All");
     setStatusFilter([]);
+    setTypeFilter("");
   };
 
   //Para que las opciones no se repitan
   const getStatus = () => {
     const statusArray = characters.map((character) => character.status);
+    if (Array.isArray(statusArray)) {
+    }
     const status = new Set(statusArray);
     return Array.from(status);
   };
@@ -100,7 +109,9 @@ const App = () => {
             handleReset={handleReset}
             name={nameFilter}
             value={speciesFilter}
-            status={getStatus()}
+            statusFilter={statusFilter}
+            allStatus={getStatus()}
+            type={typeFilter}
             //statusFilter={statusFilter}
           />
           <CharacterList characters={filteredCharacters} name={nameFilter} />

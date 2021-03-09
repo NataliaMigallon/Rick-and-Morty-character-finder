@@ -2,6 +2,7 @@ import React from "react";
 import FilterByName from "./FilterByName";
 import FilterBySpecies from "./FilterBySpecies";
 import FilterByStatus from "./FilterByStatus";
+import FilterByType from "./FilterByType";
 import Reset from "./Reset";
 import PropTypes from "prop-types";
 
@@ -21,9 +22,13 @@ const Filters = (props) => {
         <div>
           <FilterByStatus
             handleFilter={props.handleFilter}
-            status={props.status}
+            allStatus={props.allStatus}
+            statusFilter={props.statusFilter}
             //statusFilter={props.statusFilter}
           />
+        </div>
+        <div>
+          <FilterByType handleFilter={props.handleFilter} type={props.type} />
         </div>
       </form>
     </section>
