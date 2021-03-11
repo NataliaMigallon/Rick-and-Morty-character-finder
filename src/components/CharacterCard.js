@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
 
 const CharacterCard = (props) => {
   return (
@@ -21,5 +22,8 @@ const CharacterCard = (props) => {
       </Link>
     </article>
   );
+};
+CharacterCard.propTypes = {
+  character: PropTypes.shape({ name: PropTypes.string }).isRequired,
 };
 export default CharacterCard;

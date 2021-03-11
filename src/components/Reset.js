@@ -5,13 +5,13 @@ const Reset = (props) => {
     props.handleReset();
   };
   return (
-    <button
+    <input
+      type="button"
       sytle="cursor:pointer"
       className="button"
+      value="Reset"
       onClick={handleResetClick}
-    >
-      Reset
-    </button>
+    ></input>
   );
 };
 export default Reset;

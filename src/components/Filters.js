@@ -6,7 +6,9 @@ import Reset from "./Reset";
 import PropTypes from "prop-types";
 
 const Filters = (props) => {
-  const preventDefault = (ev) => ev.preventDefault();
+  const preventDefault = (ev) => {
+    ev.preventDefault();
+  };
   return (
     <section className="filter__section">
       <form onSubmit={preventDefault} className="filter__section--form">
