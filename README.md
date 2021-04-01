@@ -6,7 +6,7 @@ Este proyecto forma parte de la evaluación final del módulo 3 de Adalab. Se tr
 
 En él se han aplicado diferentes herramientas de desarrollo web como HTML5, CSS3, SASS, Java Script y React. 
 
-Para ver el proyecto tienes dos opciones: hacer click [aquí](https://beta.adalab.es/modulo-3-evaluacion-final-NataliaMigallon/#/), o instalarlo en tu ordenador.
+Para ver el proyecto tienes dos opciones: hacer click [aquí](https://nataliamigallon.github.io/Rick-and-Morty-character-finder/#/), o instalarlo en tu ordenador.
 
 ## Instalación
   1. Instalar Visual Studio Code
