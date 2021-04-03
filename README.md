@@ -2,17 +2,16 @@
 
 # Buscador de personajes de "Rick and Morty"
 
-Este proyecto forma parte de la evaluación final del módulo 3 de Adalab. Se trata de crear una SPA (Single Page Applications) en la que se muestra información sobre algunos de los personajes que aparecen en la serie "Rick and Morty".
+Este proyecto forma parte de la evaluación final del módulo 3 del bootcamp cursado en [Adalab](https://adalab.es/). Se trata de crear una SPA (Single Page Applications) en la que se muestra información sobre algunos de los personajes que aparecen en la serie "Rick and Morty".
 
 En él se han aplicado diferentes herramientas de desarrollo web como HTML5, CSS3, SASS, Java Script y React. 
 
 Para ver el proyecto tienes dos opciones: hacer click [aquí](https://nataliamigallon.github.io/Rick-and-Morty-character-finder/#/), o instalarlo en tu ordenador.
 
 ## Instalación
-  1. Instalar Visual Studio Code
-  2. Clonar este repositorio
-  3. Introducir en la terminal "npm install"
-  4. Introducir en la terminal "npm start" para poder hacer cambios y verlos a tiempo real
+  1. Clonar este repositorio.
+  2. Ejecuta en la terminal `npm install`.
+  3. Para lanzar el proyecto ejecuta en la terminal `npm start`.
 
 ## Características
 
